@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Tree {
+public class Tree extends Multiset {
 
     private Integer root;
     private ArrayList<Tree> subtrees;
@@ -27,7 +27,17 @@ public class Tree {
             for (Tree subtree : this.subtrees) {
                 size += subtree.__len__();
             }
+            return size;
         }
+    }
+
+    public String __str__() {
+        return this.strIndented(0);
+    }
+
+    public String strIndented(int depth) {
+        if (this.isEmpty()) {
+            return "";
     }
 }
 
